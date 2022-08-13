@@ -1,40 +1,189 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section><img src="./img/1.jpg" alt="react-logo"></section>
+			<section><img src="./img/2.png" alt="slide2"></section>
+			<section>
+				<p>Which web frameworks and web technologies have
+					you done extensive development work in over the past year, and
+					which do you want to work in over the next year? </p>
+				<img src="./img/3.png" alt="slide3">
+			</section>
+			<section>
+				<p> Many tech giants user React, including:</p>
+				<ul>
+					<li>Uber</li>
+					<li>Airbnb</li>
+					<li>Meta</li>
+					<li>Netflix</li>
+					<li>Pinterest</li>
+					<li>Shopify</li>
+					<li>Amazon</li>
+				</ul>
+			</section>
+			<section>
+				<section>Why react is so popular?</section>
+				<section>Easy creation of dynamic applications
+					<img src="./img/makeiteasy.png" alt="easy" width="300">
+				</section>
+				<section>Improved performance
+					<img src="./img/vdom.jpg" alt="_vdom">
+				</section>
+				<section>Reusable components
+					<img src="/img/reusable.png" alt="ru">
+				</section>
+				<section>
+					<p>Unidirectional data flow</p>
+					<img src="./img/one-way.png" alt="data-binding" width="350">
+				</section>
+				<section>Small learning curve</section>
+				<section>React can be used for the development of mobile apps
+					<img src="./img/React-Native.png" alt="">
+				</section>
+				<section>It’s easy to test
+					<img src="./img/test.png" alt="">
+				</section>
+			</section>
+			<section>
+				<section>Features of React</section>
+				<section>
+					<p>JSX</p>
+					<img src="./img/JSX.png" alt="jsx">
+				</section>
+				<section>
+					<p>JSX</p>
+					<pre><code data-trim data-noescape>const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</code></pre>
+					<br>
+					<pre><code data-trim data-noescape>
+					const school = 'RS School';
+					const element = &lt;h1&gt;Hello, {school}&lt;/h1&gt;;
+</code></pre>
+				</section>
+				<section>
+					<pre><code data-trim data-noescape>
+							const element = (
+								&lt;h1 className=&quot;greeting&quot;&gt;
+									Hello, world!
+								&lt;/h1&gt;
+							);
+					</code></pre>
+					<pre><code data-trim data-noescape>
+								const element = React.createElement(
+									'h1',
+									{className: 'greeting'},
+									'Hello, world!'
+								);
+					</code></pre>
+					<pre><code data-trim data-noescape>
+
+										const element = {
+											type: 'h1',
+											props: {
+												className: 'greeting',
+												children: 'Привет, мир!'
+											}
+										};
+					</code></pre>
+
+				</section>
+				<section>
+					<h3>Rendering</h3>
+					<span>index.html</span>
+					<pre><code data-trim data-noescape>&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+</code></pre>
+					<span>index.js</span>
+					<pre><code data-trim data-noescape>
+					const root = ReactDOM.createRoot(
+						document.getElementById('root')
+					);
+					const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;
+					root.render(element);
+</code></pre>
+				</section>
+				<section>
+					<h3>Components</h3>
+					<span>Functional Component</span>
+					<pre><code data-trim data-noescape>
+					function Welcome(props) {
+						return &lt;h1&gt;Привет, {props.name}&lt;/h1&gt;;
+					}</code></pre>
+					<span>Class Component</span>
+					<pre><code data-trim data-noescape>
+					class Welcome extends React.Component {
+						render() {
+							return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;;
+						}
+					}
+</code></pre>
+				</section>
+				<section>
+					<p>Props</p>
+					<pre><code data-trim data-noescape>
+						function Welcome(props) {
+							return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+						}
+						
+						const root = ReactDOM.createRoot(document.getElementById('root'));
+						const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;
+						root.render(element);
+
+					</code></pre>
+				</section>
+				<section>
+					<p>State</p>
+					<pre><code data-trim data-noescape>
+						class Car extends React.Component {
+							constructor(props) {
+								super(props);
+								this.state = {brand: &quot;Ford&quot;};
+							}
+							render() {
+								return (
+									&lt;div&gt;
+									&lt;h1&gt;My car is {this.state.brand}&lt;/h1&gt;
+									&lt;/div&gt;
+								);
+							}
+						}
+					</code></pre>
+				</section>
+			</section>
+			<section>Thanks</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
